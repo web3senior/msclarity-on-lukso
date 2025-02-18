@@ -1,0 +1,87 @@
+---
+import msClarityAppIcon from "../assets/ms-clarity-app-icon.png";
+import background from "../assets/background.svg";
+---
+
+<div id="container">
+  <img
+    id="background"
+    src={background.src}
+    alt="Blob Background"
+    fetchpriority="high"
+  />
+  <main>
+    <section id="hero">
+      <a href="https://astro.build">
+        <figure>
+          <img
+            src={msClarityAppIcon.src}
+            width="64"
+            height="64"
+            alt="MS Clarity App Icon"
+          />
+          <figcaption>MS Clarity</figcaption>
+        </figure>
+      </a>
+    </section>
+  </main>
+</div>
+
+<style lang="scss">
+  #background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: blur(8px);
+  }
+
+  #container {
+    font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",
+      Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 50%);
+    font-size: 0.9rem;
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.5rem;
+    height: inherit;
+
+    figure {
+      img {
+        filter: drop-shadow(0px 4px 14px rgb(131, 126, 255, 0.3));
+      }
+      figcaption {
+      }
+    }
+  }
+
+  @media screen and (max-height: 368px) {
+    #news {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    #container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+</style>
+
+<style lang="scss"></style>
